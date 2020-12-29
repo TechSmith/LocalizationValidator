@@ -8,12 +8,15 @@ namespace LocalizationValidatorLib
    {
       private readonly string _directoryPath;
       private readonly IDirectory _directory;
+      private readonly IValidatePath _validatePath;
 
       public ResourceFinder( string directoryPath,
-                             IDirectory directory )
+                             IDirectory directory,
+                             IValidatePath validatePath )
       {
          _directoryPath = directoryPath;
          _directory = directory ?? throw new ArgumentNullException( nameof( directory ) );
+         _validatePath = validatePath ?? throw new ArgumentNullException( nameof( validatePath ) );
 
          if (!_directory.Exists(_directoryPath))
          {
