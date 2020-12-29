@@ -14,6 +14,11 @@ namespace LocalizationValidatorLib
       {
          _directoryPath = directoryPath;
          _directory = directory ?? throw new ArgumentNullException( nameof( directory ) );
+
+         if (!_directory.Exists(_directoryPath))
+         {
+            throw new InvalidOperationException( "Directory does not exist" );
+         }
       }
 
       public IEnumerable<string> GetAllResourceFiles()
