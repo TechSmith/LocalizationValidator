@@ -6,4 +6,8 @@
     <LangVersion>preview</LangVersion>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="system-wrapper.core-tsc-package" Version="1.0.0" />
+  </ItemGroup>
+
 </Project>

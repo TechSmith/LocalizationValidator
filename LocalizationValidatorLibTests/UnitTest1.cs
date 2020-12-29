@@ -1,5 +1,8 @@
+using FluentAssertions;
 using LocalizationValidatorLib;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
+using SystemInterface.IO;
 
 namespace LocalizationValidatorLibTests
 {
@@ -9,7 +12,11 @@ namespace LocalizationValidatorLibTests
       [TestMethod]
       public void TestMethod1()
       {
-         ResourceFinder rf = new ResourceFinder( @"C:\Blah" );
+         Mock<IDirectory> directory = new Mock<IDirectory>();
+
+         ResourceFinder rf = new ResourceFinder( @"C:\Blah", directory.Object );
+
+         rf.GetAllResourceFiles().Should().BeEmpty();
       }
    }
 }
