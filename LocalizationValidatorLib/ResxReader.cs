@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Resources;
 using SystemInterface.IO;
 
 namespace LocalizationValidatorLib
 {
-   public class ResxReader
+   public class ResxReader : IResourceReader
    {
       private readonly string _resxFilePath;
       private readonly IFile _file;
@@ -16,6 +18,11 @@ namespace LocalizationValidatorLib
          {
             throw new InvalidOperationException( $"File {_resxFilePath} does not exist" );
          }
+      }
+
+      public IEnumerable<string> GetAllResourceStrings()
+      {
+         yield break;
       }
    }
 }

@@ -9,7 +9,7 @@ namespace LocalizationValidator
    {
       static int Main( string[] args )
       {
-         LocalizationValidatorManager manager = new LocalizationValidatorManager( args.First() );
+         LocalizationValidatorManager manager = new LocalizationValidatorManager( args.First(), new RuleManager() );
          
          return manager.ValidateResources();
       }
