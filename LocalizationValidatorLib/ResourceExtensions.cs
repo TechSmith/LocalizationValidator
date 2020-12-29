@@ -11,12 +11,17 @@
       
       public bool HasResourceExtension( string filepath )
       {
-         if ( filepath.EndsWith( $".{ResxFileExtension}" ) )
+         if ( HasResxExtension( filepath ) )
          {
             return true;
          }
 
          return false;
+      }
+
+      public bool HasResxExtension( string filepath )
+      {
+         return filepath.EndsWith( $".{ResxFileExtension}" );
       }
    }
 }
