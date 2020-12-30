@@ -12,11 +12,11 @@ namespace LocalizationValidatorLib
          _productNames = new ProductNames();
       }
       
-      public void Run( IEnumerable<string> resourceStings, RuleReport ruleReport )
+      public void Run( IEnumerable<ResourceString> resourceStings, RuleReport ruleReport )
       {
          foreach ( var resourceString in resourceStings )
          {
-            if ( HasProductName( resourceString ) )
+            if ( HasProductName( resourceString.Text ) )
             {
                ruleReport.AddFailure();
             }

@@ -4,6 +4,6 @@ namespace LocalizationValidatorLib
 {
    public interface IResourceReader
    {
-      IEnumerable<string> GetAllResourceStrings();
+      IEnumerable<ResourceString> GetAllResourceStrings();
    }
 }

@@ -10,7 +10,7 @@ namespace LocalizationValidatorLib
          _rulesToRun = new List<IRule>();
          _rulesToRun.Add( new ProductNameInResourcesRule() );
       }
-      public bool RunRulesOnStrings( IEnumerable<string> resourceStrings )
+      public bool RunRulesOnStrings( IEnumerable<ResourceString> resourceStrings )
       {
          RuleReport ruleReport = new RuleReport();
          
